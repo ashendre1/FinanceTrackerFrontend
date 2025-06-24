@@ -1,0 +1,17 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Welcome to FinTrack Dashboard</h1>
+    <button class="btn btn-secondary" (click)="logout()">Logout</button>
+  </div>
+  
+  <div class="dashboard-content">
+    <div class="chart-section">
+      <h3>Transaction Summary</h3>
+      <div *ngIf="isLoading">Loading chart...</div>
+      <!-- Always show canvas, just hide with CSS when loading -->
+      <div class="chart-container" [style.display]="isLoading ? 'none' : 'block'" style="width: 550px; height: 500px;">
+  <canvas #chartCanvas></canvas>
+</div>
+    </div>
+  </div>
+</div>
