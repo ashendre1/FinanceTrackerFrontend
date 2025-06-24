@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   loadInitialData() {
-    const username = 'aniket';
+    const username = localStorage.getItem('username');
     this.transactionService.getCategorySummary(username).subscribe({
       next: (data) => {
         this.createChart(data);
@@ -81,7 +81,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   refreshChart() {
-    const username = 'aniket';
+    const username = localStorage.getItem('username');
     this.transactionService.getCategorySummary(username).subscribe({
       next: (data) => {
         this.updateChart(data);
