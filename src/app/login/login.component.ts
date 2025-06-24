@@ -39,6 +39,7 @@ export class LoginComponent {
         next: (response) => {
           console.log('Login successful:', response);
           this.isLoading = false;
+          localStorage.setItem('username', response.username);
           // Navigate to dashboard or home page
           this.router.navigate(['/dashboard']);
         },
